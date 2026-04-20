@@ -1,0 +1,6 @@
+{
+  "name": "Grameena Vayanasala Kondazhy",
+  "description": "A mobile-friendly library management system with barcode scanning and ISBN lookup for automated book entry.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": []
+}

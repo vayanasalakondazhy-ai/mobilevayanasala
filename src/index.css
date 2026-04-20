@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Helvetica Neue', Arial, sans-serif;
+  --color-brand: #0d9488;
+  --color-brand-light: #5eead4;
+  --color-brand-dark: #0f766e;
+  --color-slate-900: #1e293b;
+  --color-slate-600: #64748b;
+  --color-slate-100: #f1f5f9;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+@layer base {
+  body {
+    @apply antialiased text-slate-900 bg-slate-100;
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 rounded-full;
+  }
+
+  .scan-line {
+    @apply absolute left-[5%] w-[90%] h-[2px] bg-brand;
+    box-shadow: 0 0 15px #0d9488;
+    animation: scan 2s infinite ease-in-out;
+  }
+}
+
+@keyframes scan {
+  0%, 100% { top: 20%; }
+  50% { top: 80%; }
+}
+
+/* html5-qrcode overrides for Sleek Interface */
+#reader {
+  border: none !important;
+}
+
+#reader__status_span {
+  display: none !important;
+}
+
+#reader__dashboard_section_csr button {
+  @apply px-4 py-2 bg-brand text-white rounded-md font-bold text-sm shadow-sm mr-2 mb-2 transition-opacity hover:opacity-90 !important;
+}
+
+#reader__dashboard_section_csr select {
+  @apply px-4 py-2 bg-white border border-slate-200 rounded-md text-sm mr-2 mb-2 outline-none !important;
+}
+
+#reader video {
+  @apply rounded-lg !important;
+}
