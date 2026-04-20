@@ -4,6 +4,8 @@ import { Book } from '../types';
 import { Search, Book as BookIcon, ChevronRight, Hash, Library } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
+import { Toaster, toast } from 'react-hot-toast';
+
 export default function BookSearch() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<Book[]>([]);
@@ -32,8 +34,13 @@ export default function BookSearch() {
 
       if (error) throw error;
       setResults(data || []);
-    } catch (err) {
+    } catch (err: any) {
       console.error('Search error:', err);
+      if (err.message === 'Failed to fetch') {
+        toast.error("Database Connection Failed. Check your API Keys.");
+      } else {
+        toast.error(`Search Error: ${err.message}`);
+      }
     } finally {
       setIsSearching(false);
     }
