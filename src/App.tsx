@@ -70,7 +70,11 @@ export default function App() {
       setSelectedBookData(null);
       setActiveTab('search');
     } catch (err: any) {
-      toast.error(`Error: ${err.message}`);
+      if (err.message === 'Failed to fetch') {
+        toast.error("Network Error: Could not reach Database. Please check your Supabase URL/Key configuration.");
+      } else {
+        toast.error(`Error: ${err.message}`);
+      }
     } finally {
       setIsSaving(false);
     }
