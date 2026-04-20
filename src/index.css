@@ -52,13 +52,13 @@
 }
 
 #reader__dashboard_section_csr button {
-  @apply px-4 py-2 bg-brand text-white rounded-md font-bold text-sm shadow-sm mr-2 mb-2 transition-opacity hover:opacity-90 !important;
+  @apply !px-4 !py-2 !bg-brand !text-white !rounded-md !font-bold !text-sm !shadow-sm !mr-2 !mb-2 !transition-opacity hover:!opacity-90;
 }
 
 #reader__dashboard_section_csr select {
-  @apply px-4 py-2 bg-white border border-slate-200 rounded-md text-sm mr-2 mb-2 outline-none !important;
+  @apply !px-4 !py-2 !bg-white !border !border-slate-200 !rounded-md !text-sm !mr-2 !mb-2 !outline-none;
 }
 
 #reader video {
-  @apply rounded-lg !important;
+  @apply !rounded-lg;
 }
