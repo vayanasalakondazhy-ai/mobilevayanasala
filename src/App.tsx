@@ -180,19 +180,12 @@ export default function App() {
               >
                 {/* Scanner Content */}
                 <div className="bg-white rounded-xl shadow-card p-6 border border-slate-200">
-                  <h2 className="text-sm font-bold m-0 mb-4 bg-slate-50 -mx-6 -mt-6 p-4 rounded-t-xl border-b border-slate-100 uppercase tracking-wider text-slate-500">Barcode Scanner</h2>
-                  <div className="relative mb-4 group overflow-hidden rounded-lg">
-                    <BarcodeScanner onScan={handleScan} isScanning={activeTab === 'scan'} />
-                    <div className="scan-line pointer-events-none" />
-                    <div className="absolute inset-0 flex items-center justify-center text-white/50 text-xs font-bold bg-black/10 pointer-events-none">CAMERA ACTIVE...</div>
-                  </div>
-                  <div className="flex gap-3 text-xs italic text-slate-400">
-                    <button 
-                      onClick={() => setActiveTab('scan')}
-                      className="flex-1 py-2.5 bg-brand text-white rounded-md font-bold hover:opacity-90 transition-all"
-                    >
-                      Start Scanning
-                    </button>
+                  <h2 className="text-sm font-bold m-0 mb-4 bg-slate-50 -mx-6 -mt-6 p-4 rounded-t-xl border-b border-slate-100 uppercase tracking-wider text-slate-500">Fast ISBN Scan</h2>
+                  <BarcodeScanner onScan={handleScan} isScanning={activeTab === 'scan'} />
+                  
+                  <div className="mt-6 p-4 bg-teal-50 rounded-lg border border-teal-100">
+                    <p className="text-[10px] text-teal-800 font-bold uppercase tracking-widest text-center">Instruction</p>
+                    <p className="text-xs text-teal-700 mt-1 text-center font-medium">Position the book barcode inside the central frame for rapid detection.</p>
                   </div>
                 </div>
 
